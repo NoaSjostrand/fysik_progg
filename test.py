@@ -32,3 +32,10 @@ for i in range(len(x)):
     else:
       delx[i][j] = -50 * (d-r) *np.cos(theta)
       dely[i][j] = -50 * (d-r) *np.sin(theta)
+
+fig, ax = plt.subplots(figsize = (10,10))
+ax.quiver(X, Y, delx, dely)
+ax.add_patch(plt.Circle((0, 0), 2, color='b'))
+ax.annotate("Goal", xy=(0, 0), fontsize=20, ha="center")
+ax.set_title('Attractive field of the Goal')
+plt.show() 
